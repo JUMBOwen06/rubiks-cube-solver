@@ -13,5 +13,4 @@ void cube_init(Cube *cube);               /* set to solved state */
 int  cube_is_solved(const Cube *cube);    /* 1 if solved, else 0 */
 void cube_print(const Cube *cube);        /* print unfolded net */
 
-void cube_move_U(Cube *cube);             /* Does meve U */
 #endif
