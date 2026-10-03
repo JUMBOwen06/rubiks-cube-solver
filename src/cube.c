@@ -40,3 +40,22 @@ void cube_print(const Cube *c) {
         putchar('\n');
     }
 }
+
+static void rotate_face_cw(uint8_t face[9]) {
+    uint8_t tmp[9];
+    for (int i = 0; i < 9; i++) tmp[i] = face[i];
+    int map[9] = {6, 3, 0, 7, 4, 1, 8, 5, 2}; /* dest <- src index */
+    for (int i = 0; i < 9; i++) face[i] = tmp[map[i]];
+}
+
+void cube_move_U(Cube *cube) {
+    rotate_face_cw(cube->stickers[FACE_U]);
+
+    uint8_t tmp[3];
+    for (int i = 0; i < 3; i++) tmp[i] = cube->stickers[FACE_F][i];
+
+    for (int i = 0; i < 3; i++) cube->stickers[FACE_F][i] = cube->stickers[FACE_R][i];
+    for (int i = 0; i < 3; i++) cube->stickers[FACE_R][i] = cube->stickers[FACE_B][i];
+    for (int i = 0; i < 3; i++) cube->stickers[FACE_B][i] = cube->stickers[FACE_L][i];
+    for (int i = 0; i < 3; i++) cube->stickers[FACE_L][i] = tmp[i];
+}
