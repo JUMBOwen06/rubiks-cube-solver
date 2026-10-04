@@ -17,8 +17,17 @@ int main(void) {
     printf("After U'\n");
     cube_move_U_prime(&cube);
     cube_print(&cube);
-
     printf("\nSolved: %s\n", cube_is_solved(&cube) ? "yes" : "no");
 
+
+    printf("After D\n");
+    cube_move_D(&cube);
+    cube_print(&cube);
+    printf("\nSolved: %s\n", cube_is_solved(&cube) ? "yes" : "no");
+
+    printf("After D'\n");
+    cube_move_D_prime(&cube);
+    cube_print(&cube);
+    printf("\nSolved: %s\n", cube_is_solved(&cube) ? "yes" : "no");
     return 0;
 }
