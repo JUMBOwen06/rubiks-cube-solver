@@ -98,12 +98,54 @@ void cube_move_B_prime(Cube *cube){
 
 
 /* R face rotation */
-void cube_move_R(Cube *cube){
+void cube_move_R(Cube *cube) {
     rotate_face_cw(cube->stickers[FACE_R]);
+
+    uint8_t tmp[3];
+    tmp[0] = cube->stickers[FACE_U][2];
+    tmp[1] = cube->stickers[FACE_U][5];
+    tmp[2] = cube->stickers[FACE_U][8];
+
+    cube->stickers[FACE_U][2] = cube->stickers[FACE_F][2];
+    cube->stickers[FACE_U][5] = cube->stickers[FACE_F][5];
+    cube->stickers[FACE_U][8] = cube->stickers[FACE_F][8];
+
+    cube->stickers[FACE_F][2] = cube->stickers[FACE_D][2];
+    cube->stickers[FACE_F][5] = cube->stickers[FACE_D][5];
+    cube->stickers[FACE_F][8] = cube->stickers[FACE_D][8];
+
+    cube->stickers[FACE_D][2] = cube->stickers[FACE_B][6];   
+    cube->stickers[FACE_D][5] = cube->stickers[FACE_B][3];
+    cube->stickers[FACE_D][8] = cube->stickers[FACE_B][0];
+
+    cube->stickers[FACE_B][0] = tmp[2];                     
+    cube->stickers[FACE_B][3] = tmp[1];
+    cube->stickers[FACE_B][6] = tmp[0];
 }
 
-void cube_move_R_prime(Cube *cube){
+void cube_move_R_prime(Cube *cube) {
     rotate_face_ccw(cube->stickers[FACE_R]);
+
+    uint8_t tmp[3];
+    tmp[0] = cube->stickers[FACE_U][2];
+    tmp[1] = cube->stickers[FACE_U][5];
+    tmp[2] = cube->stickers[FACE_U][8];
+
+    cube->stickers[FACE_U][2] = cube->stickers[FACE_B][6];   /* reversed */
+    cube->stickers[FACE_U][5] = cube->stickers[FACE_B][3];
+    cube->stickers[FACE_U][8] = cube->stickers[FACE_B][0];
+
+    cube->stickers[FACE_B][0] = cube->stickers[FACE_D][8];   /* reversed */
+    cube->stickers[FACE_B][3] = cube->stickers[FACE_D][5];
+    cube->stickers[FACE_B][6] = cube->stickers[FACE_D][2];
+
+    cube->stickers[FACE_D][2] = cube->stickers[FACE_F][2];
+    cube->stickers[FACE_D][5] = cube->stickers[FACE_F][5];
+    cube->stickers[FACE_D][8] = cube->stickers[FACE_F][8];
+
+    cube->stickers[FACE_F][2] = tmp[0];
+    cube->stickers[FACE_F][5] = tmp[1];
+    cube->stickers[FACE_F][8] = tmp[2];
 }
 
 
@@ -111,8 +153,50 @@ void cube_move_R_prime(Cube *cube){
 /* L face rotation */
 void cube_move_L(Cube *cube){
     rotate_face_cw(cube->stickers[FACE_L]);
+
+    uint8_t tmp[3];
+    tmp[0] = cube->stickers[FACE_U][0];
+    tmp[1] = cube->stickers[FACE_U][3];
+    tmp[2] = cube->stickers[FACE_U][6];
+
+    cube->stickers[FACE_U][0] = cube->stickers[FACE_F][0];
+    cube->stickers[FACE_U][3] = cube->stickers[FACE_F][3];
+    cube->stickers[FACE_U][6] = cube->stickers[FACE_F][6];
+
+    cube->stickers[FACE_F][0] = cube->stickers[FACE_D][0];
+    cube->stickers[FACE_F][3] = cube->stickers[FACE_D][3];
+    cube->stickers[FACE_F][6] = cube->stickers[FACE_D][6];
+
+    cube->stickers[FACE_D][0] = cube->stickers[FACE_B][0];
+    cube->stickers[FACE_D][3] = cube->stickers[FACE_B][3];
+    cube->stickers[FACE_D][6] = cube->stickers[FACE_B][6];
+
+    cube->stickers[FACE_B][0] = tmp[0];
+    cube->stickers[FACE_B][3] = tmp[1];
+    cube->stickers[FACE_B][6] = tmp[2];
 }
 
 void cube_move_L_prime(Cube *cube){
     rotate_face_ccw(cube->stickers[FACE_L]);
+
+    uint8_t tmp[3];
+    tmp[0] = cube->stickers[FACE_U][0];
+    tmp[1] = cube->stickers[FACE_U][3];
+    tmp[2] = cube->stickers[FACE_U][6];
+
+    cube->stickers[FACE_U][0] = cube->stickers[FACE_B][0];
+    cube->stickers[FACE_U][3] = cube->stickers[FACE_B][3];
+    cube->stickers[FACE_U][6] = cube->stickers[FACE_B][6];
+
+    cube->stickers[FACE_B][0] = cube->stickers[FACE_D][0];
+    cube->stickers[FACE_B][3] = cube->stickers[FACE_D][3];
+    cube->stickers[FACE_B][6] = cube->stickers[FACE_D][6];
+
+    cube->stickers[FACE_D][0] = cube->stickers[FACE_F][0];
+    cube->stickers[FACE_D][3] = cube->stickers[FACE_F][3];
+    cube->stickers[FACE_D][6] = cube->stickers[FACE_F][6];
+
+    cube->stickers[FACE_F][0] = tmp[0];
+    cube->stickers[FACE_F][3] = tmp[1];
+    cube->stickers[FACE_F][6] = tmp[2];
 }

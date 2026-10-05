@@ -10,15 +10,6 @@ int main(void) {
     cube_print(&cube);
     printf("\nSolved: %s\n", cube_is_solved(&cube) ? "yes" : "no");
 
-    printf("After U\n");
-    cube_move_U(&cube);
-    cube_print(&cube);
-    printf("\nSolved: %s\n", cube_is_solved(&cube) ? "yes" : "no");
-
-    printf("After F\n");
-    cube_move_F(&cube);
-    cube_print(&cube);
-    printf("\nSolved: %s\n", cube_is_solved(&cube) ? "yes" : "no");
     return 0;
 }
 
@@ -37,6 +28,7 @@ int main(void) {
     printf("\nSolved: %s\n", cube_is_solved(&cube) ? "yes" : "no");
 
 
+
     D move 
     printf("After D\n");
     cube_move_D(&cube);
@@ -49,4 +41,39 @@ int main(void) {
     cube_print(&cube);
     printf("\nSolved: %s\n", cube_is_solved(&cube) ? "yes" : "no");
     
+
+
+    F move
+    printf("After F\n");
+    cube_move_F(&cube);
+    cube_print(&cube);
+    printf("\nSolved: %s\n", cube_is_solved(&cube) ? "yes" : "no");
+
+
+
+    R move
+    printf("After R\n");
+    cube_move_R(&cube);
+    cube_print(&cube);
+    printf("\nSolved: %s\n", cube_is_solved(&cube) ? "yes" : "no");
+
+    R' move
+    printf("After R'\n");
+    cube_move_R_prime(&cube);
+    cube_print(&cube);
+    printf("\nSolved: %s\n", cube_is_solved(&cube) ? "yes" : "no");
+
+
+
+    L move
+    printf("After l\n");
+    cube_move_L(&cube);
+    cube_print(&cube);
+    printf("\nSolved: %s\n", cube_is_solved(&cube) ? "yes" : "no");
+
+    L' move
+    printf("After l'\n");
+    cube_move_L_prime(&cube);
+    cube_print(&cube);
+    printf("\nSolved: %s\n", cube_is_solved(&cube) ? "yes" : "no");
 */
