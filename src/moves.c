@@ -16,6 +16,9 @@ static void rotate_face_ccw(uint8_t face[9]) {
     for (int i = 0; i < 9; i++) face[i] = tmp[map[i]];
 }
 
+
+
+/* U face rotation */
 void cube_move_U(Cube *cube) {
     rotate_face_cw(cube->stickers[FACE_U]);
 
@@ -41,6 +44,8 @@ void cube_move_U_prime(Cube *cube) {
 }
 
 
+
+/* D face rotation */
 void cube_move_D(Cube *cube) {
     rotate_face_ccw(cube->stickers[FACE_D]);
 
@@ -63,4 +68,51 @@ void cube_move_D_prime(Cube *cube){
     for (int i = 0; i < 3; i++) cube->stickers[FACE_R][6 + i] = cube->stickers[FACE_B][6 + i];
     for (int i = 0; i < 3; i++) cube->stickers[FACE_B][6 + i] = cube->stickers[FACE_L][6 + i];
     for (int i = 0; i < 3; i++) cube->stickers[FACE_L][6 + i] = tmp[i];
+}
+
+
+
+/* F face rotation */
+void cube_move_F(Cube *cube){
+    rotate_face_cw(cube->stickers[FACE_F]);
+
+
+}
+
+void cube_move_F_prime(Cube *cube){
+    rotate_face_ccw(cube->stickers[FACE_F]);
+}
+
+
+
+
+/* B face roation */
+void cube_move_B(Cube *cube){
+    rotate_face_cw(cube->stickers[FACE_B]);
+}
+
+void cube_move_B_prime(Cube *cube){
+    rotate_face_ccw(cube->stickers[FACE_B]);
+}
+
+
+
+/* R face rotation */
+void cube_move_R(Cube *cube){
+    rotate_face_cw(cube->stickers[FACE_R]);
+}
+
+void cube_move_R_prime(Cube *cube){
+    rotate_face_ccw(cube->stickers[FACE_R]);
+}
+
+
+
+/* L face rotation */
+void cube_move_L(Cube *cube){
+    rotate_face_cw(cube->stickers[FACE_L]);
+}
+
+void cube_move_L_prime(Cube *cube){
+    rotate_face_ccw(cube->stickers[FACE_L]);
 }
