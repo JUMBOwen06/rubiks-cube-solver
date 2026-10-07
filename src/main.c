@@ -10,6 +10,15 @@ int main(void) {
     cube_print(&cube);
     printf("\nSolved: %s\n", cube_is_solved(&cube) ? "yes" : "no");
 
+
+    for (int i = 0; i < 4; i++){
+        printf("After B\n");
+        cube_move_B(&cube);
+        cube_print(&cube);
+        printf("\nSolved: %s\n", cube_is_solved(&cube) ? "yes" : "no");
+    }
+
+
     return 0;
 }
 
@@ -74,6 +83,20 @@ int main(void) {
     L' move
     printf("After l'\n");
     cube_move_L_prime(&cube);
+    cube_print(&cube);
+    printf("\nSolved: %s\n", cube_is_solved(&cube) ? "yes" : "no");
+
+
+
+    F move
+    printf("After F\n");
+    cube_move_F(&cube);
+    cube_print(&cube);
+    printf("\nSolved: %s\n", cube_is_solved(&cube) ? "yes" : "no");
+
+    F' move
+    printf("After l'\n");
+    cube_move_F_prime(&cube)F
     cube_print(&cube);
     printf("\nSolved: %s\n", cube_is_solved(&cube) ? "yes" : "no");
 */
