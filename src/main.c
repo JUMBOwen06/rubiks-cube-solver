@@ -12,8 +12,8 @@ int main(void) {
 
 
     for (int i = 0; i < 4; i++){
-        printf("After B\n");
-        cube_move_B(&cube);
+        printf("After B'\n");
+        cube_move_B_prime(&cube);
         cube_print(&cube);
         printf("\nSolved: %s\n", cube_is_solved(&cube) ? "yes" : "no");
     }
